@@ -118,6 +118,7 @@ ul li a {
   background: var(--surface-color);
   backdrop-filter: blur(4px);
   -webkit-backdrop-filter: blur(4px);
+  text-decoration: none;
 
   transition: background 02s;
 }
@@ -125,6 +126,7 @@ ul li a {
 ul li a:hover {
   background: var(--surface-color-hover);
   border: 1.5px solid var(--text-color);
+  text-decoration: underline;
 }
 
 /* Links para redes sociais */
