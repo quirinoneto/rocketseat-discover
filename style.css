@@ -35,7 +35,8 @@ body * {
 
 #container {
   width: 360px;
-  margin: 56px 0 auto;
+  max-width: 588px;
+  margin: 0 auto;
   padding: 0 24px;
 }
 
@@ -74,15 +75,16 @@ body * {
   left: 0;
   z-index: 1;
   transform: translateY(-50%);
+  cursor: pointer;
+  animation: slide-out 0.2s;
 }
 
-#switch button {
-  cursor: pointer;
+#switch button:hover {
+  outline: 8px solid var(--highlight-color);
 }
 
 .light #switch button {
-  right: 0;
-  left: initial;
+  animation: slide-in 0.2s forwards;
 }
 
 #switch span {
@@ -163,4 +165,35 @@ footer span {
   display: flex;
   align-items: center;
   gap: 4px;
+}
+
+/* Media queries */
+
+@media (min-width: 700px) {
+  :root {
+    --bg-url: url(./assets/bg-desktop.jpg);
+  }
+
+  .light {
+    --bg-url: url(./assets/bg-desktop-light.jpg);
+  }
+}
+
+/* Animações */
+@keyframes slide-in {
+  from {
+    left: 0;
+  }
+  to {
+    left: 50%;
+  }
+}
+
+@keyframes slide-out {
+  from {
+    left: 50%;
+  }
+  to {
+    left: 0;
+  }
 }
